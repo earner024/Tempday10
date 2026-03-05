@@ -44,6 +44,7 @@ public class InsuranceController {
         } catch (SQLException e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
     }
 
     @PostMapping
