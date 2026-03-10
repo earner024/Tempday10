@@ -56,9 +56,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/product/**").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/shipment/**").hasAnyAuthority("ADMIN", "USER")
                 .antMatchers("/insurance/**").hasAnyAuthority("USER", "ADMIN")
-                .anyRequest().authenticated()
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+                .antMatchers("/insurance/**").permitAll()
+                .anyRequest().permitAll();
+
+              //  .anyRequest().authenticated()
+              //  .and()
+              //  .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }

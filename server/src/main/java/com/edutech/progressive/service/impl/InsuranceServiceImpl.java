@@ -10,6 +10,7 @@ import com.edutech.progressive.service.InsuranceService;
 import java.sql.SQLException;
 import java.util.List;
 
+
 @Service
 public class InsuranceServiceImpl implements InsuranceService {
 
